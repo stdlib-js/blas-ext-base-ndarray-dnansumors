@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2025 The Stdlib Authors.
@@ -16,28 +16,35 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@esm/index.d.ts"/>
+
+import { float64ndarray } from '@stdlib/types/ndarray';
 
 /**
-* Compute the sum of a one-dimensional double-precision floating-point ndarray, ignoring `NaN` values and using ordinary recursive summation.
+* Computes the sum of a one-dimensional double-precision floating-point ndarray, ignoring `NaN` values and using ordinary recursive summation.
 *
-* @module @stdlib/blas-ext-base-ndarray-dnansumors
+* ## Notes
+*
+* -   The function expects the following ndarrays:
+*
+*     -   a one-dimensional input ndarray.
+*
+* @param arrays - array-like object containing ndarrays
+* @returns sum
 *
 * @example
 * var Float64Vector = require( '@stdlib/ndarray-vector-float64' );
-* var dnansumors = require( '@stdlib/blas-ext-base-ndarray-dnansumors' );
 *
 * var x = new Float64Vector( [ 1.0, -2.0, NaN, 2.0 ] );
 *
 * var v = dnansumors( [ x ] );
 * // returns 1.0
 */
-
-// MODULES //
-
-var main = require( './main.js' );
+declare function dnansumors( arrays: [ float64ndarray ] ): number;
 
 
 // EXPORTS //
 
-module.exports = main;
+export = dnansumors;
